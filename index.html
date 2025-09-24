@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños Leidy</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <!-- AOS (animaciones on scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Swiper (carrusel) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <h2>🎆 ¡Feliz Cumpleaños, Leidy! 🎆</h2>
+        <p>Espero que este detalle te haya sacado una gran sonrisa ✨</p>
+        <button onclick="closePopup()">Cerrar</button>
+    </div>
+</div>
+
+
+
+
+
+<body>
+
+    <!-- Hero -->
+    <header class="hero" id="hero">
+        <div class="overlay"></div>
+        <div class="hero-text" data-aos="fade-up">
+            <h1>Happy Birthday</h1>
+            <h1>🎉 🎂</h1>
+            <h2>Leidy Yolanda Silva Romero</h2>
+            <button onclick="launchConfetti()" class="confetti-btn">Presiona 🎊</button>
+
+            <!-- Flecha al siguiente bloque -->
+            <div class="scroll-down">
+                <span>Desliza </span>
+                <a href="#section1">
+                    <div class="arrow"></div>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección nacimiento -->
+    <section class="section" id="section1" data-aos="fade-up">
+        <h3>Un día como hoy...</h3>
+        <p>05 de octubre del 2006, nació una personita hermosa llamada Leidy, que ilumina la vida de quienes la rodean.
+        </p>
+        <img src="images/pequeña.jpg" alt="Leidy de niña">
+
+        <div class="scroll-down">
+            <a href="#section2">
+                <div class="arrow"></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Mensaje especial -->
+    <section class="section alt" id="section2" data-aos="fade-up">
+        <h3>Un mensaje para ti</h3>
+        <p>
+            Ya tienes 19 añotes (ya eres ADULTA aunque no lo aceptes, estás vieja, no mentira JAJAJA).
+        </p>
+
+        <p>
+            Quiero desearte lo mejor en este día tan especial. Que la felicidad, la salud y el amor
+            te acompañen siempre. Gracias por ser tan auténtica y por llenar de alegría a quienes te rodean.
+            Hoy celebramos tu vida, tu sonrisa y todo lo que eres.
+        </p>
+
+        <p>
+            ¡Feliz cumpleaños Leidysita!
+        </p>
+
+        <img src="images/imagen2.jpg" alt="Flores bonitas">
+
+        <div class="scroll-down">
+            <a href="#section3">
+                <div class="arrow"></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Cómo nos conocimos -->
+    <section class="section timeline" id="section3" data-aos="fade-up">
+        <h3>Cómo nos conocimos</h3>
+        <div class="timeline-item">
+            <p>
+                Nos conocimos en la CJ de la parroquia San Marcos y desde ese día supe que eras alguien especial.
+            </p>
+            <p>
+                Con el grupo que formamos junto a Sebas y Didi pasamos momentos divertidos, y poco a poco fui
+                conociéndote mejor.
+            </p>
+
+            <p>
+                Me encantó tu energía, tu alegría y esa forma tan única que tienes de hacer todo más divertido.
+            </p>
+
+        </div>
+
+        <img src="images/imagen3.jpg" alt="Foto en grupo">
+
+        <div class="scroll-down">
+            <a href="#responsabilidades">
+                <div class="arrow"></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Sección Responsabilidades -->
+    <section id="responsabilidades" class="section alt" data-aos="fade-up">
+        <h3>Responsabilidades</h3>
+        <p>
+            Estudias Contabilidad en la UCV del papi Acuña y, además, formas parte del elenco musical de la universidad,
+            donde tocas Zurdo con un talento increíble. También llevas tus estudios de inglés en el ICPNA.
+        </p>
+
+        <p>
+            A pesar de todas tus responsabilidades, sigues firme y demostrando tu fortaleza cada día. Eres mucho más
+            fuerte de lo
+            que tú misma imaginas. Estoy muy feliz y orgulloso por todo lo que haces.
+        </p>
+
+        <!-- Slider de responsabilidades -->
+        <div class="swiper responsabilidadesSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/ucv_.jpg" alt="Universidad"></div>
+                <div class="swiper-slide"><img src="images/fotoTocandoElenco.jpg" alt="Música"></div>
+                <div class="swiper-slide"><img src="images/icpna_.jpg" alt="Inglés"></div>
+            </div>
+        </div>
+
+        <div class="scroll-down">
+            <a href="#conciertos">
+                <div class="arrow"></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Conciertos compartidos -->
+    <section id="conciertos" class="section alt" data-aos="fade-up">
+        <h3>Conciertos compartidos</h3>
+        <p>
+            Lo que más nos unió de una forma única, como concordamos, fue la magia de La Bella Luz.
+            Ese día en que, casi por destino, terminamos en su concierto gratuito quedó grabado en mi memoria.
+            Desde entonces hemos compartido más conciertos juntos y cada uno de esos momentos.
+        </p>
+
+        <!-- Slider de conciertos -->
+        <div class="swiper responsabilidadesSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/concierto1.jpeg" alt="Concierto Bella Luz"></div>
+                <div class="swiper-slide"><img src="images/qumbiatonazo_.jpg" alt="Concierto en vivo"></div>
+                <div class="swiper-slide"><img src="images/otroConcierto.jpg" alt="Concierto en vivo"></div>
+                <div class="swiper-slide"><img src="images/fototragos.jpg" alt="Concierto en vivo"></div>
+            </div>
+        </div>
+
+        <div class="scroll-down">
+            <a href="#eros">
+                <div class="arrow"></div>
+            </a>
+        </div>
+
+
+    </section>
+
+
+
+
+    <!-- EROS -->
+    <section id="eros" class="section alt" data-aos="fade-up">
+        <h3>Eros y Chiro</h3>
+        <p>
+            El gato más hermoso y querido, tu pequeño hijo felino adorado.
+        </p>
+
+        <p>
+            Sé lo mucho que lo amas y lo especial que es en tu vida,
+            cada vez que hablas de él se nota el cariño inmenso que le tienes.
+        </p>
+
+        <p>
+            Escucharte cómo lo mimas, cómo lo tratas y hasta cómo le hablas es algo realmente bonito y único.
+            Aunque por ahora solo lo conozco a través de fotos, me encantaría algún día verlo en persona y compartir un
+            momento con ustedes.
+        </p>
+
+
+
+        <!-- Slider de Eros y Chiro -->
+        <div class="swiper responsabilidadesSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/concierto1.jpeg" alt="Concierto Bella Luz"></div>
+                <div class="swiper-slide"><img src="images/qumbiatonazo_.jpg" alt="Concierto en vivo"></div>
+                <div class="swiper-slide"><img src="images/otroConcierto.jpg" alt="Concierto en vivo"></div>
+                <div class="swiper-slide"><img src="images/fototragos.jpg" alt="Concierto en vivo"></div>
+            </div>
+        </div>
+
+        <div class="scroll-down">
+            <a href="#section4">
+                <div class="arrow"></div>
+            </a>
+        </div>
+
+
+    </section>
+
+
+
+
+
+
+
+    <!-- Galería carrusel -->
+    <section class="section alt" id="section4" data-aos="fade-up">
+        <h3>Otras fotos</h3>
+        <div class="swiper responsabilidadesSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/fotoCasaComida.jpg" alt="Leidy 1"></div>
+                <div class="swiper-slide"><img src="images/fotoComidaTren.jpg" alt="Leidy 2"></div>
+                <div class="swiper-slide"><img src="images/fotofiesta.jpg" alt="Leidy 3"></div>
+                <div class="swiper-slide"><img src="images/dibujoLeidy.jpg" alt="Leidy 3"></div>
+                <div class="swiper-slide"><img src="images/fotoJuego.jpg" alt="Leidy 4"></div>
+                <div class="swiper-slide"><img src="images/fotoLimpiando.jpg" alt="Leidy 5"></div>
+                <div class="swiper-slide"><img src="images/fotoMangomarca.jpg" alt="Leidy 6"></div>
+                <div class="swiper-slide"><img src="images/leidyQuejandose.jpg" alt="Leidy 8"></div>
+            </div>
+        </div>
+
+        <div class="scroll-down">
+            <a href="#section6">
+                <div class="arrow"></div>
+            </a>
+        </div>
+    </section>
+
+
+    <section class="section emojis" id="section6" data-aos="fade-up">
+        <h3>Emojis que te representan</h3>
+        <div class="emoji-grid">
+            <div class="emoji">😴</div>
+            <div class="emoji">😋</div>
+            <div class="emoji">😂</div>
+            <div class="emoji">🎵</div>
+            <div class="emoji">💖</div>
+            <div class="emoji">😸</div>
+            <div class="emoji">🐶</div>
+            <div class="emoji">🍃</div>
+
+        </div>
+
+        <div class="scroll-down">
+            <a href="#section7">
+                <div class="arrow"></div>
+            </a>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+    <!-- Deseo final -->
+    <section class="section" id="section7" data-aos="fade-up">
+        <h3>Deseo final</h3>
+
+        <p id="mensaje-leidy"> Que este nuevo año más de vida te traiga salud, momentos que te hagan reír de verdad y
+            esas pequeñas alegrías que tanto disfrutas.
+            Eres una persona increíble, y me alegra un montón poder coincidir contigo y compartir pedacitos de nuestras
+            vidas sin forzar nada, a nuestro ritmo.
+
+            Gracias por estar ahí, por escucharme y regalarme consejos que valoro más de lo que imaginas. Me gusta
+            cuando me dejas ver un poquito de tu mundo, porque en cada detalle te conozco mejor… y eso para mí ya es
+            especial.
+
+            Siento que tenemos una conexión bonita, como si estuviéramos en la misma sintonía, aunque cada quien toque
+            su propia nota. Y sí, deseo que vivas muchos años… hasta llegar a ser una linda ancianita (seguro vas a
+            envejecer antes que yo JAJAJA).
+
+            Gracias a Dios por cruzar nuestros caminos y al destino por hacer que aparecieras justo cuando tenía que
+            ser. Solo quiero que recuerdes que puedes contar conmigo, tanto para lo grande como para lo pequeño.
+
+            Bueno, creo que ya mucho texto… ahora sí, FIN 😅
+        </p>
+
+        <div class="scroll-down">
+            <a href="footer">
+                <div class="arrow"></div>
+            </a>
+        </div>
+
+
+
+    </section>
+
+    <footer>
+        <h4>¡Feliz Cumpleaños, Leidy!</h4>
+        <p>
+            P.D.
+        </p>
+        <p>
+            Sleepy y el maestro Roshi me ayudaron con este pequeño regalo web.
+            También te desean un feliz cumpleaños, junto a mi hermano André. Mándale saludos a Lelex y a Carmelita.
+        </p>
+
+
+
+        <!-- Links -->
+        <div class="footer-links">
+            <a href="#hero">Inicio</a>
+            <a href="#section1">Nacimiento</a>
+            <a href="#section2">Mensaje</a>
+            <a href="#section3">Cómo nos conocimos</a>
+            <a href="#responsabilidades">Responsabilidades</a>
+            <a href="#conciertos">Conciertos</a>
+            <a href="#section4">Galería</a>
+            <a href="#section6">Emojis</a>
+            <a href="#section7">Deseo final</a>
+        </div>
+
+        <!-- Íconos -->
+        <div class="icons">
+            <i>🎶</i>
+            <i>🎂</i>
+            <i>📸</i>
+            <i>✨</i>
+        </div>
+
+        <small>Created by Alex for Leidy | © 2025</small>
+    </footer>
+
+    <!-- Librerías externas -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Script principal -->
+    <script src="script.js"></script>
+</body>
+
+</html>
