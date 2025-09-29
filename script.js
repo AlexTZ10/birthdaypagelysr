@@ -90,7 +90,7 @@
     if (!countdownElement) return;
 
     // si counter está en 0 => finalizar
-    if (counter === 8) {
+    if (counter === 7) {
       clearInterval(interval);
 
       // transición (fade out)
