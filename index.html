@@ -1,41 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feliz Cumpleaños Leidy</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feliz Cumpleaños Leidy</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-    <!-- AOS (animaciones on scroll) -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- AOS (animaciones on scroll) CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Swiper (carrusel) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Swiper CSS (carruseles) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <link rel="stylesheet" href="style.css">
+  <!-- Tu CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
-
-
-
-<!-- POPUP -->
-<div class="popup" id="popup">
-    <div class="popup-content">
-        <h2>🎆 ¡Feliz Cumpleaños, Leidy! 🎆</h2>
-        <p>Espero que este detalle te haya sacado una gran sonrisa ✨</p>
-        <button onclick="closePopup()">Cerrar</button>
-    </div>
-</div>
-
-
-
-
-
 <body>
+  <!-- =========================
+       OVERLAY: COUNTER (misterioso 10 -> 0)
+       ========================= -->
+  <div id="countdown-container" aria-hidden="false">
+    <canvas id="particles"></canvas>
+    <div class="count-wrap">
+      <h1 id="countdown" aria-live="polite">10</h1>
+      <p class="mensaje-misterioso">Prepárate para algo especial...</p>
+    </div>
+  </div>
 
-    <!-- Hero -->
+  <!-- =========================
+       MAIN PAGE (oculto hasta terminar el contador)
+       ========================= -->
+  <div id="main-page" class="hidden">
+
+    <!-- POPUP -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <h2>¡Feliz Cumpleaños, Leidy!</h2>
+            <p>Espero que este detalle online te haya sacado una gran sonrisa.</p>
+            <button onclick="closePopup()">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- HERO -->
     <header class="hero" id="hero">
         <div class="overlay"></div>
         <div class="hero-text" data-aos="fade-up">
@@ -67,6 +75,47 @@
             </a>
         </div>
     </section>
+
+
+
+<!-- Sección Leidy bebe -->
+    <section id="responsabilidades" class="section alt" data-aos="fade-up">
+        <h3> Algunas de la Infancia</h3>
+        <p>
+            La infancia guarda momentos que se quedan grabados en el corazón, y en cada una de estas fotos aparece la chispa de alegría que siempre te ha caracterizado. Esa niña sonriente, llena de curiosidad y ternura, ya mostraba desde entonces la esencia de la persona especial en la que te convertirías.        </p>
+
+        <p>
+            Hoy, al mirar atrás, es imposible no sonreír al ver cómo esa dulzura y esa luz siguen presentes en ti. Cada recuerdo de tu niñez es un recordatorio de lo valiosa que eres y de lo hermoso que ha sido el camino que te trajo hasta aquí.
+        </p>
+
+        <!-- Slider de responsabilidades -->
+        <div class="swiper responsabilidadesSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/leidybebellorando.jpg" alt="Universidad"></div>
+                <div class="swiper-slide"><img src="images/leidyDinosaurio.jpg" alt="Música"></div>
+                <div class="swiper-slide"><img src="images/leidynina2.jpg" alt="Inglés"></div>
+                <div class="swiper-slide"><img src="images/leidypequeña.jpg" alt="Inglés"></div>
+            </div>
+        </div>
+
+        <div class="scroll-down">
+            <a href="#conciertos">
+                <div class="arrow"></div>
+            </a>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- Mensaje especial -->
     <section class="section alt" id="section2" data-aos="fade-up">
@@ -175,12 +224,7 @@
                 <div class="arrow"></div>
             </a>
         </div>
-
-
     </section>
-
-
-
 
     <!-- EROS -->
     <section id="eros" class="section alt" data-aos="fade-up">
@@ -200,15 +244,17 @@
             momento con ustedes.
         </p>
 
-
-
         <!-- Slider de Eros y Chiro -->
         <div class="swiper responsabilidadesSwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="images/concierto1.jpeg" alt="Concierto Bella Luz"></div>
-                <div class="swiper-slide"><img src="images/qumbiatonazo_.jpg" alt="Concierto en vivo"></div>
-                <div class="swiper-slide"><img src="images/otroConcierto.jpg" alt="Concierto en vivo"></div>
-                <div class="swiper-slide"><img src="images/fototragos.jpg" alt="Concierto en vivo"></div>
+                <div class="swiper-slide"><img src="images/eros1.jpg" alt="Concierto Bella Luz"></div>
+                <div class="swiper-slide"><img src="images/eros2.jpg" alt="Concierto Bella Luz"></div>
+                <div class="swiper-slide"><img src="images/eros3.jpg" alt="Concierto Bella Luz"></div>
+                <div class="swiper-slide"><img src="images/eros4.jpg" alt="Concierto Bella Luz"></div>
+                <div class="swiper-slide"><img src="images/eros5.jpg" alt="Concierto Bella Luz"></div>
+                <div class="swiper-slide"><img src="images/eros6.jpg" alt="Concierto Bella Luz"></div>
+                <div class="swiper-slide"><img src="images/eros7.jpg" alt="Concierto Bella Luz"></div>
+                <div class="swiper-slide"><img src="images/eros8.jpg" alt="Concierto Bella Luz"></div>
             </div>
         </div>
 
@@ -217,15 +263,7 @@
                 <div class="arrow"></div>
             </a>
         </div>
-
-
     </section>
-
-
-
-
-
-
 
     <!-- Galería carrusel -->
     <section class="section alt" id="section4" data-aos="fade-up">
@@ -250,7 +288,6 @@
         </div>
     </section>
 
-
     <section class="section emojis" id="section6" data-aos="fade-up">
         <h3>Emojis que te representan</h3>
         <div class="emoji-grid">
@@ -266,18 +303,36 @@
         </div>
 
         <div class="scroll-down">
-            <a href="#section7">
+            <a href="#sectionBTS">
                 <div class="arrow"></div>
             </a>
         </div>
 
     </section>
 
+    <!--   BTS  -->
+    <section class="section alt" id="sectionBTS" data-aos="fade-up">
+        <h3>Solo porque soy bueno ... BTS</h3>
+        <div class="swiper responsabilidadesSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/bts1.jpg" alt="Leidy 1"></div>
+                <div class="swiper-slide"><img src="images/bts2.jpg" alt="Leidy 2"></div>
+                <div class="swiper-slide"><img src="images/bts3.jpg" alt="Leidy 3"></div>
+                <div class="swiper-slide"><img src="images/bts4.jpg" alt="Leidy 3"></div>
+                <div class="swiper-slide"><img src="images/bts5.jpg" alt="Leidy 4"></div>
+                <div class="swiper-slide"><img src="images/bts6.jpg" alt="Leidy 5"></div>
+                <div class="swiper-slide"><img src="images/bts7.jpg" alt="Leidy 6"></div>
+                <div class="swiper-slide"><img src="images/bts8.jpg" alt="Leidy 8"></div>
+                <div class="swiper-slide"><img src="images/bts9.jpg" alt="Leidy 8"></div>
+            </div>
+        </div>
 
-
-
-
-
+        <div class="scroll-down">
+            <a href="#section7">
+                <div class="arrow"></div>
+            </a>
+        </div>
+    </section>
 
     <!-- Deseo final -->
     <section class="section" id="section7" data-aos="fade-up">
@@ -307,11 +362,9 @@
                 <div class="arrow"></div>
             </a>
         </div>
-
-
-
     </section>
 
+    
     <footer>
         <h4>¡Feliz Cumpleaños, Leidy!</h4>
         <p>
@@ -348,13 +401,16 @@
         <small>Created by Alex for Leidy | © 2025</small>
     </footer>
 
-    <!-- Librerías externas -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <!-- Script principal -->
-    <script src="script.js"></script>
+
+  </div><!-- /main-page -->
+
+  <!-- Librerías externas -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Tu script -->
+  <script src="script.js"></script>
 </body>
-
 </html>
