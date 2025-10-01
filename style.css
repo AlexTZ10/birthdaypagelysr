@@ -308,10 +308,13 @@ footer h4 {
   font-size: 1.6em;
   margin-bottom: 0.6em;
   background: linear-gradient(90deg, #ff66b2, #cc2b6c);
-  -webkit-background-clip: text;
+  background-clip: text;          /* estándar */
+  -webkit-background-clip: text;  /* compatibilidad Chrome, Safari */
   -webkit-text-fill-color: transparent;
+  color: transparent;             /* fallback */
   font-weight: 700;
 }
+
 footer p {
   max-width: 650px;
   margin: 0 auto 1.2em auto;
