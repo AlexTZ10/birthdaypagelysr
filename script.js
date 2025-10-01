@@ -263,6 +263,8 @@ function initPage() {
 
   mensajeTWObserver.observe(mensajeElemento);
 
+
+  
   // Popup logic (footer)
   const popup = document.getElementById("popup");
   function showPopup() {
@@ -292,6 +294,14 @@ function initPage() {
     popupObserver.observe(footer);
   }
 }
+
+
+
+
+
+
+
+
 
 /* ===========================
    Confetti / Fireworks helpers
