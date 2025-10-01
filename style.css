@@ -112,8 +112,29 @@ p { max-width: 800px; margin: 0 auto 1em auto; line-height: 1.6; padding: 0 1em;
 .confetti-btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 10px 25px rgba(0,0,0,0.25); }
 
 /* Secciones */
+
+
 .section { padding: 3em 1em 4em 1em; text-align: center; opacity: 0; transform: translateY(30px); animation: fadeIn 1.2s ease forwards; }
-.section.alt { background: #fdf1f5; }
+
+
+/* .section.alt { background: #5a429e; }   */
+
+
+#section2{
+  background: #ffebfb;
+}
+#section4{
+  background: #ffebfb;
+}
+#section6{
+  background: #ffebfb;
+}
+#section8{
+  background: #ffebfb;
+}
+#section10{
+  background: #ffebfb;
+}
 
 /* Imágenes con sombra + hover */
 .section img, .swiper-slide img { max-width: 90%; border-radius: 15px; margin-top: 1em; box-shadow: 0 10px 20px rgba(0,0,0,0.15); transition: transform 0.5s ease, box-shadow 0.4s ease; }

@@ -3,14 +3,21 @@
    =========================== */
 (function () {
   // ELEMENTOS
-  const countdownElement = document.getElementById('countdown');
-  const countdownContainer = document.getElementById('countdown-container');
-  const particlesCanvas = document.getElementById('particles');
-  const mainPage = document.getElementById('main-page');
+  const countdownElement = document.getElementById("countdown");
+  const countdownContainer = document.getElementById("countdown-container");
+  const particlesCanvas = document.getElementById("particles");
+  const mainPage = document.getElementById("main-page");
 
   // seguridad si falta
-  if (!countdownElement || !countdownContainer || !particlesCanvas || !mainPage) {
-    console.warn('Elementos del overlay faltan. Asegúrate que el HTML contiene #countdown, #countdown-container, #particles y #main-page');
+  if (
+    !countdownElement ||
+    !countdownContainer ||
+    !particlesCanvas ||
+    !mainPage
+  ) {
+    console.warn(
+      "Elementos del overlay faltan. Asegúrate que el HTML contiene #countdown, #countdown-container, #particles y #main-page"
+    );
   }
 
   // Inicializar contador (10 -> 0, sin llegar a -1)
@@ -19,7 +26,7 @@
 
   // PARTICULAS (canvas)
   const canvas = particlesCanvas;
-  const ctx = canvas ? canvas.getContext('2d') : null;
+  const ctx = canvas ? canvas.getContext("2d") : null;
   let particlesArray = [];
   let particleAnimId = null;
 
@@ -44,7 +51,12 @@
     update() {
       this.x += this.speedX;
       this.y += this.speedY;
-      if (this.x < -10 || this.x > canvas.width + 10 || this.y < -10 || this.y > canvas.height + 10) {
+      if (
+        this.x < -10 ||
+        this.x > canvas.width + 10 ||
+        this.y < -10 ||
+        this.y > canvas.height + 10
+      ) {
         this.reset();
       }
     }
@@ -75,7 +87,7 @@
   }
 
   // ajustar tamaño
-  window.addEventListener('resize', () => {
+  window.addEventListener("resize", () => {
     resizeCanvas();
     if (particlesArray.length) initParticles(particlesArray.length);
   });
@@ -94,15 +106,16 @@
       clearInterval(interval);
 
       // transición (fade out)
-      countdownContainer.style.transition = 'opacity 0.8s ease, visibility 0.8s ease';
-      countdownContainer.style.opacity = '0';
+      countdownContainer.style.transition =
+        "opacity 0.8s ease, visibility 0.8s ease";
+      countdownContainer.style.opacity = "0";
 
       // detener partículas tras la transición
       setTimeout(() => {
         cancelAnimationFrame(particleAnimId);
-        if (particlesCanvas) particlesCanvas.style.display = 'none';
-        countdownContainer.classList.add('hidden');
-        mainPage.classList.remove('hidden');
+        if (particlesCanvas) particlesCanvas.style.display = "none";
+        countdownContainer.classList.add("hidden");
+        mainPage.classList.remove("hidden");
 
         // inicializar todo lo que depende del DOM visible
         initPage();
@@ -123,7 +136,7 @@
    =========================== */
 function initPage() {
   // AOS
-  if (typeof AOS !== 'undefined') {
+  if (typeof AOS !== "undefined") {
     AOS.init({ duration: 1200, once: true });
   }
 
@@ -137,7 +150,10 @@ function initPage() {
       if (!startTime) startTime = currentTime;
       const timeElapsed = currentTime - startTime;
       const progress = Math.min(timeElapsed / duration, 1);
-      const ease = progress < 0.5 ? 2 * progress * progress : -1 + (4 - 2 * progress) * progress;
+      const ease =
+        progress < 0.5
+          ? 2 * progress * progress
+          : -1 + (4 - 2 * progress) * progress;
       window.scrollTo(0, start + distance * ease);
       if (timeElapsed < duration) requestAnimationFrame(animation);
     }
@@ -154,7 +170,7 @@ function initPage() {
   });
 
   // Swiper sliders
-  if (typeof Swiper !== 'undefined') {
+  if (typeof Swiper !== "undefined") {
     document.querySelectorAll(".responsabilidadesSwiper").forEach((el) => {
       new Swiper(el, {
         loop: true,
@@ -172,88 +188,80 @@ function initPage() {
   const emojis = document.querySelectorAll(".emoji");
 
   if (emojisSection && emojis.length) {
-    const emojiObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          emojis.forEach((emoji, i) => setTimeout(() => emoji.classList.add('show'), i * 600));
-          emojiObserver.unobserve(emojisSection);
-        }
-      });
-    }, { threshold: 0.4 });
+    const emojiObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            emojis.forEach((emoji, i) =>
+              setTimeout(() => emoji.classList.add("show"), i * 600)
+            );
+            emojiObserver.unobserve(emojisSection);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
     emojiObserver.observe(emojisSection);
   }
 
-  
+  // MENSAJE IMPORTNATE LEIDY
+  const mensaje = document.getElementById("mensaje-leidy");
 
-// MENSAJE IMPORTNATE LEIDY
-const mensaje = document.getElementById("mensaje-leidy");
+  const mensajeObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          mensaje.classList.add("show");
+          mensajeObserver.unobserve(mensaje);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
 
-const mensajeObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        mensaje.classList.add("show");
-        mensajeObserver.unobserve(mensaje);
-      }
-    });
-  },
-  { threshold: 0.5 }
-);
+  mensajeObserver.observe(mensaje);
 
-mensajeObserver.observe(mensaje);
+  // --- EFECTO MÁQUINA DE ESCRIBIR ---
+  // Guardamos el texto original respetando saltos
+  const mensajeElemento = document.getElementById("mensaje-leidy");
+  const mensajeTexto = mensajeElemento.innerHTML.trim();
+  mensajeElemento.innerHTML = "";
+  mensajeElemento.classList.add("typewriter");
 
-
-
-
-
-// --- EFECTO MÁQUINA DE ESCRIBIR ---
-// Guardamos el texto original respetando saltos
-const mensajeElemento = document.getElementById("mensaje-leidy");
-const mensajeTexto = mensajeElemento.innerHTML.trim(); 
-mensajeElemento.innerHTML = ""; 
-mensajeElemento.classList.add("typewriter");
-
-function typeWriterEffect(element, text, speed = 30) {
-  let i = 0;
-  function typing() {
-    if (i < text.length) {
-      // Si encuentra salto de línea, lo respeta
-      if (text.substr(i, 4) === "<br>") {
-        element.innerHTML += "<br>";
-        i += 4;
+  function typeWriterEffect(element, text, speed = 30) {
+    let i = 0;
+    function typing() {
+      if (i < text.length) {
+        // Si encuentra salto de línea, lo respeta
+        if (text.substr(i, 4) === "<br>") {
+          element.innerHTML += "<br>";
+          i += 4;
+        } else {
+          element.innerHTML += text.charAt(i);
+          i++;
+        }
+        setTimeout(typing, speed);
       } else {
-        element.innerHTML += text.charAt(i);
-        i++;
+        element.classList.remove("typewriter"); // quitar cursor al final
       }
-      setTimeout(typing, speed);
-    } else {
-      element.classList.remove("typewriter"); // quitar cursor al final
     }
+    typing();
   }
-  typing();
-}
 
-// Observer para iniciar cuando aparezca
-const mensajeTWObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        typeWriterEffect(mensajeElemento, mensajeTexto, 50); // velocidad ajustable
-        mensajeTWObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.5 }
-);
+  // Observer para iniciar cuando aparezca
+  const mensajeTWObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          typeWriterEffect(mensajeElemento, mensajeTexto, 50); // velocidad ajustable
+          mensajeTWObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
 
-mensajeTWObserver.observe(mensajeElemento);
-
-
-
-
-
-
-
+  mensajeTWObserver.observe(mensajeElemento);
 
   // Popup logic (footer)
   const popup = document.getElementById("popup");
@@ -270,14 +278,17 @@ mensajeTWObserver.observe(mensajeElemento);
 
   const footer = document.querySelector("footer");
   if (footer && popup) {
-    const popupObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          showPopup();
-          popupObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.6 });
+    const popupObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            showPopup();
+            popupObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.6 }
+    );
     popupObserver.observe(footer);
   }
 }
@@ -286,20 +297,32 @@ mensajeTWObserver.observe(mensajeElemento);
    Confetti / Fireworks helpers
    =========================== */
 function launchConfetti() {
-  if (typeof confetti !== 'function') return;
+  if (typeof confetti !== "function") return;
   const duration = 2 * 1000;
   const end = Date.now() + duration;
 
   (function frame() {
-    confetti({ particleCount: 6, angle: 60, spread: 55, origin: { x: 0 }, colors: ["#ff99cc", "#ffcc00", "#66ffcc"] });
-    confetti({ particleCount: 6, angle: 120, spread: 55, origin: { x: 1 }, colors: ["#ff99cc", "#ffcc00", "#66ffcc"] });
+    confetti({
+      particleCount: 6,
+      angle: 60,
+      spread: 55,
+      origin: { x: 0 },
+      colors: ["#ff99cc", "#ffcc00", "#66ffcc"],
+    });
+    confetti({
+      particleCount: 6,
+      angle: 120,
+      spread: 55,
+      origin: { x: 1 },
+      colors: ["#ff99cc", "#ffcc00", "#66ffcc"],
+    });
     if (Date.now() < end) requestAnimationFrame(frame);
   })();
 }
 window.launchConfetti = launchConfetti;
 
 function launchFireworks() {
-  if (typeof confetti !== 'function') return;
+  if (typeof confetti !== "function") return;
   const duration = 4 * 1000;
   const animationEnd = Date.now() + duration;
   const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
@@ -313,8 +336,45 @@ function launchFireworks() {
     if (timeLeft <= 0) return clearInterval(interval);
 
     const particleCount = 50 * (timeLeft / duration);
-    confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
-    confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+    confetti(
+      Object.assign({}, defaults, {
+        particleCount,
+        origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+      })
+    );
+    confetti(
+      Object.assign({}, defaults, {
+        particleCount,
+        origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+      })
+    );
   }, 250);
 }
 window.launchFireworks = launchFireworks;
+
+//EMOJIS:
+
+// Animación de emojis secuencial con rebote
+const emojisSection = document.getElementById("section9");
+const emojis = document.querySelectorAll(".emoji");
+
+function showEmojis() {
+  emojis.forEach((emoji, index) => {
+    setTimeout(() => {
+      emoji.classList.add("show");
+    }, index * 7000); // 2.5 segundos entre cada emoji
+  });
+}
+
+// Intersection Observer: dispara la animación al aparecer la sección
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        showEmojis();
+        observer.unobserve(emojisSection); // solo se ejecuta una vez
+      }
+    });
+  },
+  { threshold: 0.5 }
+);
