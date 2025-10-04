@@ -21,7 +21,7 @@
   }
 
   // Inicializar contador (10 -> 0, sin llegar a -1)
-  let counter = 10;
+  let counter = 19;
   if (countdownElement) countdownElement.textContent = counter;
 
   // PARTICULAS (canvas)
